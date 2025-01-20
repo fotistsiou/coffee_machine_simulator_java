@@ -60,13 +60,40 @@ to get it built. Here’s what awaits you:
   - Teach your virtual coffee machine to perform three basic actions: collect the money, renew the supplies, and serve 
     the coffee.
   - Stage Topics:
-    - 
+    - Data types and their sizes
+    - Type casting
+    - Calling methods
+    - Floating-point types
+    - Boolean type and operations. True and false
+    - Comparing values. Relational operators
+    - Conditional statement
+    - One-line condition with ternary operator
+    - While and do-while loops
+    - For loop
+    - Break and continue. Branching
+    - Declaring methods
+    - Method "main"
+    - Multiple conditions: switch
+    - Functional decomposition
+    - Primitive and reference types
+    - Array
+    - Arrays as parameters
+    - Iterating over arrays
+    - Constants. Final variables
 - Stage 5/6: Keep track of the supplies
   - Program the machine to display on the screen the amount of supplies left. Set the main loop: now the menu keeps 
     updating until you enter “exit”.
   - Stage Topics:
-    - 
+    - IDE
+    - IntelliJ IDEA
+    - IntelliJ IDEA basics
+    - JetBrains Academy plugin
 - Stage 6/6: Brush up your code
   - Time for some final touch-ups: structure the code so that it runs smoothly.
   - Stage Topics:
-    - 
+    - Defining classes
+    - Instance methods
+    - Initializing new instances. Constructor
+    - Objects and their properties
+    - Static members
+    - Combining constants with enum
