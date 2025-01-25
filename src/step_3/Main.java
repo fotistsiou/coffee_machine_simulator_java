@@ -1,5 +1,7 @@
 package step_3;
 
+import java.util.Scanner;
+
 /**
  * Estimate the number of servings
  * -------------------------------
@@ -33,4 +35,31 @@ package step_3;
  */
 
 public class Main {
+    public static int waterPerCup = 200, milkPerCup = 50, beansPerCup = 15;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Write how many ml of water the coffee machine has:");
+        int totalWater = scanner.nextInt();
+        System.out.println("Write how many ml of milk the coffee machine has:");
+        int totalMilk = scanner.nextInt();
+        System.out.println("Write how many grams of coffee beans the coffee machine has:");
+        int totalBeans = scanner.nextInt();
+        System.out.println("Write how many cups of coffee you will need:");
+        int demandCaps = scanner.nextInt();
+
+        int scoopOfWater = totalWater / Main.waterPerCup;
+        int scoopOfMilk = totalMilk / Main.milkPerCup;
+        int scoopOfBeans = totalBeans / Main.beansPerCup;
+
+        int maxCups = Math.min(scoopOfWater, Math.min(scoopOfMilk, scoopOfBeans));
+
+        if (maxCups == demandCaps) {
+            System.out.println("Yes, I can make that amount of coffee");
+        } else if (maxCups > demandCaps) {
+            System.out.printf("Yes, I can make that amount of coffee (and even %d more than that)%n", maxCups - demandCaps);
+        } else {
+            System.out.printf("No, I can make only %d cup(s) of coffee%n", maxCups);
+        }
+    }
 }
