@@ -61,5 +61,7 @@ public class Main {
         } else {
             System.out.printf("No, I can make only %d cup(s) of coffee%n", maxCups);
         }
+
+        scanner.close();
     }
 }
