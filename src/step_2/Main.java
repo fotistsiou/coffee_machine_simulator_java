@@ -42,5 +42,6 @@ public class Main {
         System.out.printf("%d ml of water%n", totalWater);
         System.out.printf("%d ml of milk%n", totalMilk);
         System.out.printf("%d g of coffee beans%n", totalBeans);
+        scanner.close();
     }
 }
