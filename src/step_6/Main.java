@@ -34,7 +34,7 @@ import java.util.Scanner;
  * coffee beans, 9 disposable cups, $550 in cash.
  */
 
-public class CoffeeMachine {
+public class Main {
     static int prodCups = 0;
     static Scanner scanner = new Scanner(System.in);
     static CoffeeStock coffeeStock = new CoffeeStock(400, 540, 120, 9, 550);
@@ -44,11 +44,11 @@ public class CoffeeMachine {
         while (!theEnd) {
             System.out.println("Write action (buy, fill, take, clean, remaining, exit):");
             switch (scanner.nextLine()) {
-                case "buy" -> CoffeeMachine.buy();
-                case "fill" -> CoffeeMachine.fill();
-                case "take" -> CoffeeMachine.take();
-                case "remaining" -> CoffeeMachine.printStock();
-                case "clean" -> CoffeeMachine.clean();
+                case "buy" -> Main.buy();
+                case "fill" -> Main.fill();
+                case "take" -> Main.take();
+                case "remaining" -> Main.printStock();
+                case "clean" -> Main.clean();
                 case "exit" -> theEnd = true;
             }
         }
@@ -57,29 +57,29 @@ public class CoffeeMachine {
 
     static void printStock() {
         System.out.println("The coffee machine has:");
-        System.out.printf("%d ml of water%n", CoffeeMachine.coffeeStock.getWater());
-        System.out.printf("%d ml of milk%n", CoffeeMachine.coffeeStock.getMilk());
-        System.out.printf("%d g of coffee beans%n", CoffeeMachine.coffeeStock.getBeans());
-        System.out.printf("%d disposable cups%n", CoffeeMachine.coffeeStock.getCups());
-        System.out.printf("$%d of money%n", CoffeeMachine.coffeeStock.getMoney());
+        System.out.printf("%d ml of water%n", Main.coffeeStock.getWater());
+        System.out.printf("%d ml of milk%n", Main.coffeeStock.getMilk());
+        System.out.printf("%d g of coffee beans%n", Main.coffeeStock.getBeans());
+        System.out.printf("%d disposable cups%n", Main.coffeeStock.getCups());
+        System.out.printf("$%d of money%n", Main.coffeeStock.getMoney());
     }
 
     static void buy() {
-        if (CoffeeMachine.prodCups >= 10) {
+        if (Main.prodCups >= 10) {
             System.out.println("I need cleaning!");
             return;
         }
         System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:");
         String choice = scanner.nextLine();
         int waterRemove = 0, milkRemove = 0, beansRemove = 0, moneyAdd = 0;
-        int stockWater = CoffeeMachine.coffeeStock.getWater(), stockMilk = CoffeeMachine.coffeeStock.getMilk(), stockBeans = CoffeeMachine.coffeeStock.getBeans(), stockCups = CoffeeMachine.coffeeStock.getCups(), stockMoney = CoffeeMachine.coffeeStock.getMoney();
+        int stockWater = Main.coffeeStock.getWater(), stockMilk = Main.coffeeStock.getMilk(), stockBeans = Main.coffeeStock.getBeans(), stockCups = Main.coffeeStock.getCups(), stockMoney = Main.coffeeStock.getMoney();
         switch (choice) {
             case "1" -> {
                 CoffeeEspresso coffee = new CoffeeEspresso();
                 waterRemove = coffee.getWater();
                 beansRemove = coffee.getBeans();
                 moneyAdd = coffee.getCost();
-                CoffeeMachine.prodCups++;
+                Main.prodCups++;
             }
             case "2" -> {
                 CoffeeLatte coffee = new CoffeeLatte();
@@ -87,7 +87,7 @@ public class CoffeeMachine {
                 milkRemove = coffee.getMilk();
                 beansRemove = coffee.getBeans();
                 moneyAdd = coffee.getCost();
-                CoffeeMachine.prodCups++;
+                Main.prodCups++;
             }
             case "3" -> {
                 CoffeeCappuccino coffee = new CoffeeCappuccino();
@@ -95,7 +95,7 @@ public class CoffeeMachine {
                 milkRemove = coffee.getMilk();
                 beansRemove = coffee.getBeans();
                 moneyAdd = coffee.getCost();
-                CoffeeMachine.prodCups++;
+                Main.prodCups++;
             }
             case "back" -> {
                 return;
@@ -105,49 +105,49 @@ public class CoffeeMachine {
             System.out.println("Sorry, not enough water!");
             return;
         } else {
-            CoffeeMachine.coffeeStock.setWater(stockWater - waterRemove);
+            Main.coffeeStock.setWater(stockWater - waterRemove);
         }
         if (stockMilk < milkRemove) {
             System.out.println("Sorry, not enough milk!");
             return;
         } else {
-            CoffeeMachine.coffeeStock.setMilk(stockMilk - milkRemove);
+            Main.coffeeStock.setMilk(stockMilk - milkRemove);
         }
         if (stockBeans < beansRemove) {
             System.out.println("Sorry, not enough beans!");
             return;
         } else {
-            CoffeeMachine.coffeeStock.setBeans(stockBeans - beansRemove);
+            Main.coffeeStock.setBeans(stockBeans - beansRemove);
         }
         if (stockCups <= 0) {
             System.out.println("Sorry, not enough cups!");
             return;
         } else {
-            CoffeeMachine.coffeeStock.setCups(stockCups - 1);
+            Main.coffeeStock.setCups(stockCups - 1);
         }
-        CoffeeMachine.coffeeStock.setMoney(CoffeeMachine.coffeeStock.getMoney() + moneyAdd);
+        Main.coffeeStock.setMoney(Main.coffeeStock.getMoney() + moneyAdd);
         System.out.println("I have enough resources, making you a coffee!");
     }
 
     static void fill() {
         System.out.println("Write how many ml of water you want to add:");
-        CoffeeMachine.coffeeStock.setWater(scanner.nextInt() + CoffeeMachine.coffeeStock.getWater());
+        Main.coffeeStock.setWater(scanner.nextInt() + Main.coffeeStock.getWater());
         System.out.println("Write how many ml of milk you want to add:");
-        CoffeeMachine.coffeeStock.setMilk(scanner.nextInt() + CoffeeMachine.coffeeStock.getMilk());
+        Main.coffeeStock.setMilk(scanner.nextInt() + Main.coffeeStock.getMilk());
         System.out.println("Write how many grams of coffee beans you want to add:");
-        CoffeeMachine.coffeeStock.setBeans(scanner.nextInt() + CoffeeMachine.coffeeStock.getBeans());
+        Main.coffeeStock.setBeans(scanner.nextInt() + Main.coffeeStock.getBeans());
         System.out.println("Write how many disposable cups you want to add:");
-        CoffeeMachine.coffeeStock.setCups(scanner.nextInt() + CoffeeMachine.coffeeStock.getCups());
+        Main.coffeeStock.setCups(scanner.nextInt() + Main.coffeeStock.getCups());
         scanner.nextLine();
     }
 
     static void take() {
-        System.out.printf("I gave you $%d", CoffeeMachine.coffeeStock.getMoney());
-        CoffeeMachine.coffeeStock.setMoney(0);
+        System.out.printf("I gave you $%d", Main.coffeeStock.getMoney());
+        Main.coffeeStock.setMoney(0);
     }
 
     static void clean() {
-        CoffeeMachine.prodCups = 0;
+        Main.prodCups = 0;
         System.out.println("I have been cleaned!");
     }
 }
