@@ -108,12 +108,12 @@ public class Main {
             System.out.println("Sorry, not enough cups!");
             return;
         }
+        System.out.println("I have enough resources, making you a coffee!");
         Main.waterStock -= waterRemove;
         Main.milkStock -= milkRemove;
         Main.beansStock -= beansRemove;
         Main.cupsStock--;
         Main.money += addMoney;
-        System.out.println("I have enough resources, making you a coffee!");
     }
 
     static void fill() {
