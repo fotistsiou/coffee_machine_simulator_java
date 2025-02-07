@@ -1,7 +1,7 @@
 # Coffee Machine Simulator with Java
 
 ## Project Details
-> - **Level**: 🌟🌟🌟 Hard | **Time**: 🕒 ~13 hours
+> - **Level**: 🌟🌟🌟 Hard | **Time**: 🕒 ~14 hours
 > - **Course**: [Introduction to Java](https://hyperskill.org/courses/8-introduction-to-java)
 > - **Project**: [Coffee Machine Simulator with Java](https://hyperskill.org/projects/33?track=8)
 > - **Description**: Program a virtual barista to get a taste of Java. You'll create a functional program and gain 
@@ -55,11 +55,6 @@ to get it built. Here’s what awaits you:
   - Working with conditions, program the machine to estimate how many creamy coffees it can make based on the amount of 
     ingredients we enter.
   - Stage Topics:
-    - 
-- Stage 4/6: Add functions to your machine
-  - Teach your virtual coffee machine to perform three basic actions: collect the money, renew the supplies, and serve 
-    the coffee.
-  - Stage Topics:
     - Data types and their sizes
     - Type casting
     - Calling methods
@@ -68,8 +63,8 @@ to get it built. Here’s what awaits you:
     - Comparing values. Relational operators
     - Conditional statement
     - One-line condition with ternary operator
-    - While and do-while loops
     - For loop
+    - While and do-while loops
     - Break and continue. Branching
     - Declaring methods
     - Method "main"
@@ -80,17 +75,24 @@ to get it built. Here’s what awaits you:
     - Arrays as parameters
     - Iterating over arrays
     - Constants. Final variables
+    - IDE
+    - What are bugs
+    - Debugging overviewIntelliJ IDEA
+    - Run and debug with IntelliJ IDEA
+    - Debugging simple constructs
+- Stage 4/6: Add functions to your machine
+  - Teach your virtual coffee machine to perform three basic actions: collect the money, renew the supplies, and serve 
+    the coffee.
+  - Stage Topics:
+    - IntelliJ IDEA basics
+    - JetBrains Academy plugin
 - Stage 5/6: Keep track of the supplies
   - Program the machine to display on the screen the amount of supplies left. Set the main loop: now the menu keeps 
     updating until you enter “exit”.
-  - Stage Topics:
-    - IDE
-    - IntelliJ IDEA
-    - IntelliJ IDEA basics
-    - JetBrains Academy plugin
 - Stage 6/6: Brush up your code
   - Time for some final touch-ups: structure the code so that it runs smoothly.
   - Stage Topics:
+    - What is object-oriented programming
     - Defining classes
     - Instance methods
     - Initializing new instances. Constructor
