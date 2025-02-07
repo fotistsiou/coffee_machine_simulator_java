@@ -77,7 +77,8 @@ to get it built. Here’s what awaits you:
     - Constants. Final variables
     - IDE
     - What are bugs
-    - Debugging overviewIntelliJ IDEA
+    - Debugging overview
+    - IntelliJ IDEA
     - Run and debug with IntelliJ IDEA
     - Debugging simple constructs
 - Stage 4/6: Add functions to your machine
